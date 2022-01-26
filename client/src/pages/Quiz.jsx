@@ -28,9 +28,9 @@ function Quiz() {
   
 const sequencePrompt = (avg) => {
   if (avg >= 1.6 && avg <= 2.4){
-    console.log('Go have fun')
+    navigate('/amusement')
   } else if (avg > 2.4){
-    console.log('Get some activity!')
+    navigate('/exercise')
   } else if (avg < 1.5){
     navigate('/relaxation')
   } 

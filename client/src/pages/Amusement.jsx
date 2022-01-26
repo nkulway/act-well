@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import React from 'react';
 
-function Relaxation({ executeSearch, results, reset }) {
+function Amusement({ results, reset }) {
   return (
   <div>
-    Welcome to the relaxation page, it is {results} degrees out.
+    Welcome to the amusement page, it is {results} degrees outside.
   </div>
-    );
+    )
 }
 
 
@@ -17,4 +17,4 @@ const mapStateToProps = state => ({
   reset: state.reset
 })
 
-export default connect(mapStateToProps, null)(Relaxation)
+export default connect(mapStateToProps, null)(Amusement)
