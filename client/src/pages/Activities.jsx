@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 function Activities() {
-  const [activities, setActivitise] = useState([])
+  const [activities, setActivities] = useState([])
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
 
@@ -14,7 +14,7 @@ function Activities() {
       }
     })
       .then(res => {
-        setActivitise(res.data)
+        setActivities(res.data)
       })
   }, [token])
 

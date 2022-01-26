@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import { Route, Routes } from 'react-router';
 import Activities from './pages/Activities';
 import Quiz from './pages/Quiz';
+import Relaxation from './pages/Relaxation';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/quiz" element={<Quiz />} />
+        <Route path="/relaxation" element={<Relaxation />} />
       </Routes>
     </div>
   );

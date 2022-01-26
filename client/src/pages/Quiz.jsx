@@ -1,42 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react'
+import SearchBar from '../components/SearchBar'
 import { useNavigate } from 'react-router-dom'
-
-
-
-
 
 function Quiz() { 
 
-  let meanArr = []
+  let [questionAvg, setQuestionAvg] = useState([])
   const navigate = useNavigate()
-
-  const findAvg = (num) => {
-    const sum = num.reduce((a, b) => a + b, 0);
-    const avg = (sum / num.length) || 0;
-    console.log(`The sum is: ${sum}. The average is: ${avg}.`);
-    return
-  }
-
-  const handleClick = (e) => {
-    let button = e.target
-    meanArr.push(button.id)
-    let avgArr = meanArr.map((str) => {
-      return parseInt(str)
-    })
-    findAvg(avgArr)
-    return
-    
-    
+  
+  
+  const handleClick = (num) => {
+    setQuestionAvg([...questionAvg, parseInt(num)])
 }
 
-let move = () => {
-  navigate('/register')
+  const findAvg = (arrNum) => {
+    if (arrNum.length <= 2){
+      const sum = arrNum.reduce((a, b) => a + b, 0);
+      const avg = (sum / arrNum.length) || 0;
+      console.log(`The sum is: ${sum}. The average is: ${avg}.`);
+    return avg
+    } else {
+      const sum = arrNum.reduce((a, b) => a + b, 0);
+      const avg = (sum / arrNum.length) || 0;
+      console.log(`The sum is: ${sum}. The average is: ${avg}.`);
+      sequencePrompt(avg)
+  }}
+
+  
+const sequencePrompt = (avg) => {
+  if (avg >= 1.6 && avg <= 2.4){
+    console.log('Go have fun')
+  } else if (avg > 2.4){
+    console.log('Get some activity!')
+  } else if (avg < 1.5){
+    navigate('/relaxation')
+  } 
 }
 
-// let avg = (average) => {
-//   let res = (average / average.length) * average.length
-// return console.log(res)
-// }
+const average = findAvg(questionAvg)
 
 
 
@@ -44,19 +44,20 @@ let move = () => {
   <div>
     How are you feeling today?
     <div>
-      <button id='1' onClick={handleClick}>Would love a relaxing afternoon.</button>
-      <button id='2' onClick={handleClick}>Feeling up for some fun!</button>
-      <button id='3' onClick={handleClick}>Ready for some activity!</button>
+      <SearchBar />
+      <button onClick={() => handleClick(1)}>Would love a relaxing afternoon.</button>
+      <button onClick={() => handleClick(2)}>Feeling up for some fun!</button>
+      <button onClick={() => handleClick(3)}>Ready for some activity!</button>
     </div>
     <div>
-      <button id='1' onClick={handleClick}>Would love a relaxing afternoon.</button>
-      <button id='2' onClick={handleClick}>Feeling up for some fun!</button>
-      <button id='3' onClick={handleClick}>Ready for some activity!</button>
+      <button onClick={() => handleClick(1)}>Would love a relaxing afternoon.</button>
+      <button onClick={() => handleClick(2)}>Feeling up for some fun!</button>
+      <button onClick={() => handleClick(3)}>Ready for some activity!</button>
     </div>
     <div>
-      <button id='1' onClick={handleClick}>Would love a relaxing afternoon.</button>
-      <button id='2' onClick={handleClick}>Feeling up for some fun!</button>
-      <button id='3' onClick={handleClick}>Ready for some activity!</button>
+      <button onClick={() => handleClick(1)}>Would love a relaxing afternoon.</button>
+      <button onClick={() => handleClick(2)}>Feeling up for some fun!</button>
+      <button onClick={() => handleClick(3)}>Ready for some activity!</button>
     </div>
   </div>
   )
