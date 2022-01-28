@@ -1,4 +1,5 @@
 import * as types from "../actionTypes"
+import jwtDecode from 'jwt-decode'
 
 export const executeSearch = (values) => dispatch => {
   if (!values) {
@@ -24,3 +25,21 @@ const resetStore = () => {
       type: types.RESET_STORE,
     }
   }
+
+export const logOutUser = () => {
+  return {
+    type: types.USER_LOGGED_OUT
+  }
+}
+
+export const checkUser = () => dispatch => {
+  dispatch({ type: types.CHECK_USER })
+  const token = localStorage.getItem('token')
+  if(!token){
+    dispatch(logOutUser())
+  }
+  const user = jwtDecode(token)
+  console.log(user)
+
+}
+

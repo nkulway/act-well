@@ -10,8 +10,18 @@ import Register from './pages/Register';
 import { Route, Routes } from 'react-router';
 import Relaxation from './pages/Relaxation';
 import Activity from './pages/activity'
+import { checkUser } from './redux/actions/actions'
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react';
 
 function App() {
+
+  // const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   dispatch(checkUser())
+  // }, [dispatch])
+
   return (
     <div className="App">
       <NavBar />

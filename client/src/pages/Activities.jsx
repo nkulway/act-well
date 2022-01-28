@@ -77,7 +77,7 @@ function Activities() {
         value={average}
         required/>
       </p>
-      <button tyoe="submit">Register</button>
+      <button tyoe="submit">Create New Activity</button>
     </form>
   </div>
   </div>

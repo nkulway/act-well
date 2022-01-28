@@ -31,6 +31,7 @@ const Login = () => {
         <input type="text" id="user_name" 
         onChange={(e) => setUsername(e.target.value)} 
         value={user_name}
+        autoComplete="off"
         required/>
       </p>
       <p>
@@ -38,14 +39,16 @@ const Login = () => {
         <input type="email" id="email" 
         onChange={(e) => setEmail(e.target.value)} 
         value={email}
+        autoComplete="off"
         required/>
       </p>
       <p>
         <label htmlFor="password">Password</label><br />
-        <input type="text" id="password" 
+        <input type="password" id="password" 
         onChange={(e) => setPassword(e.target.value)} 
         value={password}
-        required/>
+        required
+        />
       </p>
       <button type="submit">Login</button>
     </form>
