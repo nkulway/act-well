@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import { useNavigate } from 'react-router-dom'
+import Login from './Login'
 
 function Quiz() { 
 
+  const [showResults, setShowResults] = useState(false)
+  const onClick = () => setShowResults(true)
+  
   let [questionAvg, setQuestionAvg] = useState([])
   const navigate = useNavigate()
   
@@ -44,6 +48,10 @@ const average = findAvg(questionAvg)
   <div>
     How are you feeling today?
     <div>
+    {/* <div>
+      <input type="submit" value="Search" onClick={onClick} />
+      { showResults ? <Login /> : null }
+    </div> */}
       <SearchBar />
       <button onClick={() => handleClick(1)}>Would love a relaxing afternoon.</button>
       <button onClick={() => handleClick(2)}>Feeling up for some fun!</button>

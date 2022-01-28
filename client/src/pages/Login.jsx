@@ -13,7 +13,7 @@ const Login = () => {
     axios.post('/api/v1/users/login', { user_name, email, password })
       .then(res => {
         console.log(res.data)
-        navigate('/activities')
+        navigate('/quiz')
         localStorage.setItem('token', res.data.token)
       })
       .catch(err => {
