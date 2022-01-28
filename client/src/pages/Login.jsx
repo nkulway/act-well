@@ -47,7 +47,7 @@ const Login = () => {
         value={password}
         required/>
       </p>
-      <button tyoe="submit">Login</button>
+      <button type="submit">Login</button>
     </form>
   </div>
   );

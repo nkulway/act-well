@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 // import './style.css';
 // import { CardContent } from '@mui/material';
 
-function Relaxation({ results }) {
+function Activity({ results }) {
 
 
   const handleTemp = () => {
@@ -32,10 +32,9 @@ function Relaxation({ results }) {
   );
 }
 
-// how to handle undefined 'results'in reducer
 const mapStateToProps = state => ({
-  results: state.search.results,
-  reset: state.reset
+  results: state.search.results
+  // humidity: state.search.results.humidity
 })
 
-export default connect(mapStateToProps, null)(Relaxation)
+export default connect(mapStateToProps, null)(Activity);

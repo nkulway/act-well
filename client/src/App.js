@@ -9,6 +9,7 @@ import Quiz from './pages/Quiz';
 import Register from './pages/Register';
 import { Route, Routes } from 'react-router';
 import Relaxation from './pages/Relaxation';
+import Activity from './pages/activity'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/activities" element={<Activities />} />
+        <Route path="/activity" element={<Activity />} />
         <Route path="/amusement" element={<Amusement />} />
         <Route path="/exercise" element={<Exercise />} />
         <Route path="/login" element={<Login />} />

@@ -5,6 +5,7 @@ import Login from './Login'
 
 function Quiz() { 
 
+  
   const [showResults, setShowResults] = useState(false)
   const onClick = () => setShowResults(true)
   
@@ -41,11 +42,11 @@ const sequencePrompt = (avg) => {
 }
 
 const average = findAvg(questionAvg)
-
+console.log(average)
 
 
   return (
-  <div>
+  <div onLoad={() => window.location.reload()}>
     How are you feeling today?
     <div>
     {/* <div>
