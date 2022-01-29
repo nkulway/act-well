@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import { useNavigate } from 'react-router-dom'
-import Login from './Login'
+// import Login from './Login'
 
 function Quiz() { 
 
   
-  const [showResults, setShowResults] = useState(false)
-  const onClick = () => setShowResults(true)
+  // const [showResults, setShowResults] = useState(false)
+  // const onClick = () => setShowResults(true)
   
   let [questionAvg, setQuestionAvg] = useState([])
   const navigate = useNavigate()

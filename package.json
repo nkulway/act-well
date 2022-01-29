@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",

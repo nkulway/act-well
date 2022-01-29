@@ -34,7 +34,7 @@ function Activities() {
       })
       .then(res => {
         console.log(res.data)
-        alert('Registered successfully')
+        alert('You successfully added an activity!')
         navigate('/login')
       })
       .catch(err => {

@@ -9,10 +9,10 @@ import Quiz from './pages/Quiz';
 import Register from './pages/Register';
 import { Route, Routes } from 'react-router';
 import Relaxation from './pages/Relaxation';
-import Activity from './pages/activity'
-import { checkUser } from './redux/actions/actions'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react';
+import Activity from './pages/activityCard'
+// import { checkUser } from './redux/actions/actions'
+// import { useDispatch } from 'react-redux'
+// import { useEffect } from 'react';
 
 function App() {
 

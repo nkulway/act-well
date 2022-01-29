@@ -86,7 +86,7 @@ function NavBar() {
               Register
             </MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/activity">
-              activity
+              Activity
             </MenuItem>
             
           </Menu>
