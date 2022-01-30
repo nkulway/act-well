@@ -1,11 +1,7 @@
 import React from 'react'
-// import Blue from '../../Blue_Gradient.svg'
 import CardCold from '../components/relax/cold/cold';
 import CardWarm from '../components/relax/warm/cardWarm';
 import { connect } from 'react-redux'
-// import Searching from '../../components/SearchBar'
-// import './style.css';
-// import { CardContent } from '@mui/material';
 
 function Activity({ results }) {
 

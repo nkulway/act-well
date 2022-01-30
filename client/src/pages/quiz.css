@@ -1,0 +1,24 @@
+.button {
+  /* display: flex; */
+  height: 90%;
+  /* margin: 0 auto; */
+  width: 50%;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+}
+
+.button-container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button-box {
+  margin: 20px;
+  background-color: aliceblue;
+  width: 50%;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}

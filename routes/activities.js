@@ -48,6 +48,11 @@ router.post('/', checkAuth, (req, res) => {
       .then(activity => {
         res.status(201).json(activity)
       })
+      .catch(error => {
+        res.status(500).json(error)
+        console.log(error)
+      })
+    
   // respond to client with new activity
 })
 

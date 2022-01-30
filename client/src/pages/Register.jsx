@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -25,29 +26,30 @@ const Register = () => {
   return (
   <div>
     <h1>Register</h1>
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <p>
-        <label htmlFor="user_name">User Name</label><br />
-        <input type="text" id="user_name" 
+    <form className="form" onSubmit={(e) => handleSubmit(e)}>
+
+        <TextField type="text" id="user_name" 
         onChange={(e) => setUsername(e.target.value)} 
         value={user_name}
-        required/>
-      </p>
-      <p>
-        <label htmlFor="email">Email</label><br />
-        <input type="email" id="email" 
+        required
+        label="User Name"
+        /><br/>
+
+        <TextField type="email" id="email" 
         onChange={(e) => setEmail(e.target.value)} 
         value={email}
-        required/>
-      </p>
-      <p>
-        <label htmlFor="password">Password</label><br />
-        <input type="text" id="password" 
+        required
+        label="Email"
+        /><br/>
+    
+        <TextField type="text" id="password" 
         onChange={(e) => setPassword(e.target.value)} 
         value={password}
-        required/>
-      </p>
-      <button tyoe="submit">Register</button>
+        required
+        label="Password"
+        /><br/>
+     
+     <Button type="submit" variant="contained">Register</Button>
     </form>
   </div>
   );

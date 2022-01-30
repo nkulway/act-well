@@ -1,8 +1,15 @@
 import axios from 'axios'
+import { Button } from '@mui/material';
+import { TextField } from '@material-ui/core';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import './login.css'
+import { logInUser } from '../redux/actions/actions';
+
 
 const Login = () => {
+  const dispatch = useDispatch()
   const [user_name, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -13,8 +20,8 @@ const Login = () => {
     axios.post('/api/v1/users/login', { user_name, email, password })
       .then(res => {
         console.log(res.data)
+        dispatch(logInUser(res.data.token))
         navigate('/quiz')
-        localStorage.setItem('token', res.data.token)
       })
       .catch(err => {
         console.log(err.response)
@@ -25,33 +32,37 @@ const Login = () => {
   return (
   <div>
     <h1>Login</h1>
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <p>
-        <label htmlFor="user_name">User Name</label><br />
-        <input type="text" id="user_name" 
-        onChange={(e) => setUsername(e.target.value)} 
-        value={user_name}
-        autoComplete="off"
-        required/>
-      </p>
-      <p>
-        <label htmlFor="email">Email</label><br />
-        <input type="email" id="email" 
-        onChange={(e) => setEmail(e.target.value)} 
-        value={email}
-        autoComplete="off"
-        required/>
-      </p>
-      <p>
-        <label htmlFor="password">Password</label><br />
-        <input type="password" id="password" 
-        onChange={(e) => setPassword(e.target.value)} 
-        value={password}
-        required
-        />
-      </p>
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <form className="form" onSubmit={(e) => handleSubmit(e)}>
+          
+          <TextField type="text" id="outlined-basic" 
+          onChange={(e) => setUsername(e.target.value)} 
+          value={user_name}
+          autoComplete="off"
+          required
+          label="User Name"
+          variant="outlined"/><br/>
+        
+          <TextField  type="email"  id="email" 
+          onChange={(e) => setEmail(e.target.value)} 
+          value={email}
+          autoComplete="off"
+          required
+          label="Email"
+          variant="outlined"
+          /><br/>
+        
+          <TextField type="password" id="password" 
+          onChange={(e) => setPassword(e.target.value)} 
+          value={password}
+          required
+          label="Password"
+          variant="outlined"
+          /><br/>
+        
+        <Button type="submit" variant="contained">Login</Button>
+      </form>
+    </div>
   </div>
   );
 };

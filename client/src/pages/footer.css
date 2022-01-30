@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  /* position: relative; */
+  align-items: center;
+  align-content: center;
+  }
+
+  a:hover {
+    color: #2196F3;
+  }
+  

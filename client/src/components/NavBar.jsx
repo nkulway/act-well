@@ -1,20 +1,18 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
+import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
 import React from "react";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
-import { MenuItem } from "@mui/material";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import { AccountCircle } from "@material-ui/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { logOutUser } from "../redux/actions/actions";
 
 
 function NavBar() {
-  
+
+
+  const dispatch = useDispatch()
+  const {user, isChecked} = useSelector(state => state.user)
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchor, setAnchor] = useState(null);
   const open = Boolean(anchorEl);
@@ -36,16 +34,11 @@ function NavBar() {
     setAnchor(null);
   };
 
-  
-
-  const token = localStorage.getItem("token");
-
-  const isLoggedIn = token ? true : false;
+  const isLoggedIn = isChecked && user ? true : false;
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    dispatch(logOutUser())
     navigate("/login");
-    window.location.reload()
   };
 
   return (
@@ -122,6 +115,7 @@ function NavBar() {
                 open={Boolean(anchor)}
                 onClose={handleProfileClose}
               >
+                <MenuItem>{user.user_name}</MenuItem>
                 <MenuItem onClick={handleProfileClose} component={Link} to="/activities">
                   My Activities
                 </MenuItem>

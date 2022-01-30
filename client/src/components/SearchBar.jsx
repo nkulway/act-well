@@ -7,6 +7,7 @@ import { OutlinedInput } from "@mui/material";
 import React from 'react';
 import { Search } from '@material-ui/icons';
 import { useState } from 'react';
+import './searchBar.css'
 
 function SearchBar({ executeSearch, reset }) {
 

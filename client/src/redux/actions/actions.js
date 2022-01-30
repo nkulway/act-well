@@ -17,29 +17,41 @@ const fetchSuccess = (isSuccess, data) => {
       type: types.EXECUTE_SEARCH,
       searchQueryResults: data
     }
-  } 
+  }
 }
 
 const resetStore = () => {
-    return {
-      type: types.RESET_STORE,
-    }
+  return {
+    type: types.RESET_STORE,
   }
+}
 
 export const logOutUser = () => {
+  localStorage.removeItem("token")
   return {
     type: types.USER_LOGGED_OUT
   }
 }
 
-export const checkUser = () => dispatch => {
-  dispatch({ type: types.CHECK_USER })
-  const token = localStorage.getItem('token')
-  if(!token){
-    dispatch(logOutUser())
-  }
+// putting things in local storage to get out later
+export const logInUser = (token) => dispatch => {
+  localStorage.setItem('token', token)
   const user = jwtDecode(token)
-  console.log(user)
-
+  dispatch({
+    type: types.USER_LOGGED_IN,
+    user
+  })
 }
 
+export const checkUser = () => dispatch => {
+  dispatch({
+    type: types.CHECK_USER
+  })
+  const token = localStorage.getItem('token')
+  if (!token) {
+    dispatch(logOutUser())
+  } else {
+
+    dispatch(logInUser(token))
+  }
+}

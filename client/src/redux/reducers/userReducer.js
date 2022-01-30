@@ -1,21 +1,22 @@
-import { CHECK_LOGIN } from 
+import { USER_LOGGED_IN, USER_LOGGED_OUT } from "../actionTypes"
 
 const initialState = {
   user: null,
   isChecked: false
 }
 
-function userRducer(state = initialState, action) {
+function userReducer(state = initialState, action) {
   switch (action.type) {
-    case EXECUTE_SEARCH: {
+    case USER_LOGGED_IN: {
       return {
-        ...state,
-        results: action.searchQueryResults
+        isChecked: true,
+        user: action.user
       }
     }
-    case RESET_STORE: {
+    case USER_LOGGED_OUT: {
       return {
-        results: null
+        isChecked: true,
+        user: null
       }
     }
     default:
