@@ -1,7 +1,7 @@
 import React from 'react'
 // import Blue from '../../Blue_Gradient.svg'
-import CardCold from '../components/amusement/cold/cold';
-import CardWarm from '../components/amusement/warm/cardWarm';
+import CardCold from '../../components/amusement/cold/cold';
+import CardWarm from '../../components/amusement/warm/cardWarm';
 import { connect } from 'react-redux'
 // import Searching from '../../components/SearchBar'
 // import './style.css';

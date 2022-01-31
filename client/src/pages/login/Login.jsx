@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import './login.css'
-import { logInUser } from '../redux/actions/actions';
+import { logInUser } from '../../redux/actions/actions';
 
 
 const Login = () => {

@@ -1,16 +1,16 @@
-import Activities from './pages/Activities';
-import Amusement from './pages/Amusement';
+import Activities from './pages/activities/Activities';
+import Amusement from './pages/amusement/Amusement';
 import './App.css';
-import Exercise from './pages/Exercise';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import NavBar from './components/NavBar';
-import Quiz from './pages/Quiz';
-import Register from './pages/Register';
+import Exercise from './pages/exercise/Exercise';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import NavBar from './components/nabBar/NavBar';
+import Quiz from './pages/quiz/Quiz';
+import Register from './pages/register/Register';
 import { Route, Routes } from 'react-router';
-import Relaxation from './pages/Relaxation';
-import Activity from './pages/activityCard'
-import Footer from './pages/Footer';
+import Relaxation from './pages/relaxation/Relaxation';
+import Activity from './pages/activities/activityCard'
+import Footer from './pages/footer/Footer';
 import { checkUser } from './redux/actions/actions'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
@@ -40,7 +40,9 @@ function App() {
         <Route path="/relaxation" element={<Relaxation />} />
       </Routes>
     </div>
+    <div className="push">
       <Footer />
+      </div>
       </>
   );
 }

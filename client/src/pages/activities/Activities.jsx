@@ -55,7 +55,7 @@ function Activities() {
       .then((res) => {
         console.log(res.data);
         alert("You successfully added an activity!");
-        navigate("/login");
+        window.location.reload(false);
       })
       .catch((err) => {
         console.log(err.response);

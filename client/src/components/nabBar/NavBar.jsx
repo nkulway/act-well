@@ -5,7 +5,8 @@ import { useNavigate } from "react-router";
 import { useState } from "react";
 import { AccountCircle } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { logOutUser } from "../redux/actions/actions";
+import { logOutUser } from "../../redux/actions/actions";
+import './navBar.css'
 
 
 function NavBar() {

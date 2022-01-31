@@ -1,6 +1,6 @@
 import React from 'react'
-import CardCold from '../components/relax/cold/cold';
-import CardWarm from '../components/relax/warm/cardWarm';
+import CardCold from '../../components/relax/cold/cold';
+import CardWarm from '../../components/relax/warm/cardWarm';
 import { connect } from 'react-redux'
 
 function Activity({ results }) {

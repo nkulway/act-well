@@ -1,0 +1,49 @@
+.header-svg {
+  display: flex;
+  height: 30%;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 30%;
+}
+
+.home-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 100px;
+  margin-top: -30px;
+  text-align: center;
+}
+
+.computer-img {
+  height: 40%;
+  margin-right: 40px;
+  width: 40%;
+}
+
+.description-container {
+  align-content: center;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 60%;
+}
+
+.paragraph-txt {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 50%;
+}
+
+.register {
+  width: 70%;
+}
