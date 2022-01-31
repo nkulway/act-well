@@ -1,33 +1,39 @@
 const coldActivities = [
   {
-    "activity": "Go Ice Skating//Relax",
-    "details": "What better to do to enjoy the crisp air than to go ice skating! Enjoy a good time with friends or maybe a fun date night with someone special. ",
+    "activity": "Make Mulled Cider",
+    "details": "Drinking cider has several health benefits such as providing your body with necessary antioxidants. Not only that but its very simple to make mulled cider and it will leave your home smelling terrific as it can second as a potpourri.",
     "category": "Ideal Temp: 17°f - 23°f",
     "id": 1
   },
   {
-    "activity": "Have a Bonfire",
-    "details": "Cut some wood and clean the pit, it's time for a bonefire! Everyone loves the community building activity of a bonfire with friends and family. Fire up the grill and turn it into an event for the day! Don't forget the marshmellows!",
+    "activity": "Meditate",
+    "details": "Silence your mind and bring your attention inward. See yourself from afar and breath. Meditation has been practiced for centuries and is very beneficial to mental health and clarity. Simply start with closing your eyes and taking in a deep breath of air.",
     "category": "Ideal Temp: 45°f+",
     "id": 2 
   },
   {
-    "activity": "Build a Snowman",
-    "details": "Roll up a new freind for the season! A snow woman/snowman is a terric companion to fight the cold. Perfect for a bright and snowy day!",
+    "activity": "Start an Indoor Garden",
+    "details": "From succulents to monsteras, indoor gardens are a fantastic way to take care of something that will also take care of you. Having an indoor garden can help maintain the air quialty in your house and it will need to have a schedule for proper care. It truly livens up the room.",
     "category": "Ideal Temp: 10°f - 25°f",
     "id": 3
   },
   {
-    "activity": "Go Skiing!",
-    "details": "Time to hit the lodge for the season and rip some slopes! Fun for the whole family - you can hit the bunny slope or sneak off to the backcountry you read about in the lastest edition of SKI.  What are you wating for!",
+    "activity": "Clean the House",
+    "details": "Time to get organized! The act of cleaning is very cathartic and can help you maintain a level head. Simply being in a well organized space has numorous benefits to your mental well being and will make being lazy feel all the better.",
     "category": "Ideal Temp: 20°f - 30°f",
     "id": 4
   },
   {
-    "activity": "Go for a Winter Hike",
-    "details": "What a wonderful time of year to enjoy the sheer beauty of nature during the winter season.  Take a camera and pack some coco or cider in your thermous!  Grab a friend or two and don't forget your four leggeed companion!",
+    "activity": "Learn a Musical Instrument",
+    "details": "Go ahead and learn to play an instrument! Taking lessons is easy with all the free resources online. Who knows, maybe you're the next Stevie Ray Vaughn and don't even know it!",
     "category": "Ideal Temp: 20°f - 30°f",
     "id": 5
+  },
+  {
+    "activity": "Watch a Movie",
+    "details": "On the couch or in the theatre, pick something out and relax as the flick plays! A great way to pass time and entertain yourself.",
+    "category": "Ideal Temp: Any",
+    "id": 6
   }
 ]
 

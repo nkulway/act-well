@@ -56,4 +56,38 @@ router.post('/', checkAuth, (req, res) => {
   // respond to client with new activity
 })
 
+// router.put("/", checkAuth, (req, res) => {
+//   const { id } = req.body;
+//   console.log(id)
+//   models.Activity.update({
+//     where: {
+//       id
+//     }
+//   })
+//   .then(activity => {
+//     res.status(201).json(activity)
+//   })
+//   .catch(error => {
+//     res.status(500).json(error)
+//     console.log(error)
+//   })
+// })
+
+router.put('/', checkAuth, (req, res) => {
+  // try and remove activity with id, as long it is owned by th logged in user
+  models.Activity.update({ where: { 
+    id: req.params.id,
+    UserId: req.user.id 
+  }})
+    .then(numberUpdated => {
+      // if there was nothing deleted, then return an error
+      if (numberUpdated === 0) {
+        res.status(404).json({ error: 'could not find that activity' })
+        return
+      }
+
+      res.json({ success: 'activity deleted successfully' })
+    })
+})
+
 module.exports = router;

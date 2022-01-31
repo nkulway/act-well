@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  Checkbox,
   Container,
   Grid,
   IconButton,
@@ -15,7 +14,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./activities.css";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useSelector } from "react-redux";
 
 function Activities() {
   
@@ -65,6 +63,33 @@ function Activities() {
       });
   };
 
+
+  // function handleClick(e) {
+  //   let target = e.target;
+  //   let id = e.id
+  
+  //   if (target.tagName === 'BUTTON'){
+  //     const parent = target.parentElement
+  //     const body = {
+  //       id: e.id,
+  //       average: e.value
+  //     }
+  //     console.log(id)
+  //     axios.put(`/api/v1/activities/`, body, {
+  //       headers: {
+  //         "x-access-token": token,
+  //       }})
+  //         .then(res => console.log(res.message))
+  //         .catch(err => console.log(err));
+  //   } else {
+  //     target.innerHTML = `
+  //     <input id="edit-member" value="${target.innerText}" />
+  //     <button data-id="${id}">Update</button> 
+  //   `;
+  //   }}
+
+  
+
   const handleDelete = (e) => {
     let id = e.id
     axios
@@ -78,12 +103,13 @@ function Activities() {
       )
       .then((res) => {
         console.log(res.data);
-        alert("You successfully deleted an activity!");
+        alert("You successfully deleted an activity!")
       })
       .catch((err) => {
         console.log(err.response);
         alert(err.response.data.error);
       });
+      window.location.reload(false)
   };
 
 

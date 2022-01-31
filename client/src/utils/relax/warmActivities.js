@@ -1,31 +1,31 @@
 const warmActivities = [
   {
-    "activity": "Go for a Run",
-    "details": "Challenge yourself and go for a run!  Did you know running not only burns 50% more calories than walking but it helps build stronger bones & promotes better mood and energy?  Any distance at any speed - you can do it!",
+    "activity": "Nap in a Hammock",
+    "details": "Take a nice and relaxing nap in a hammock. It's as simple as tying a knot and closing your eyes. With the summer breeze at a park or in your backyard, its a great way to pass the time.",
     "category": "Ideal Temp: 50°f - 59°f",
     "id": 1
   },
   {
-    "activity": "Have a Picnic",
-    "details": "A nice picnic on a nice warm day.  What could be better than enjoying a light meal in a park or open field while the sun shines.  Lay back, enjoy the clouds as they pass by.",
+    "activity": "Walk by the Lake",
+    "details": "Feeling uneventful and want some time to clear your mind? Take a walk by the lake and allow its natural beauty to calm you and fill you with positivity.",
     "category": "Ideal Temp: 65°f - 72°f",
     "id": 2 
   },
   {
-    "activity": "Whitewater Rafting",
-    "details": "Nothing better to beat the heat than whitewater rafting down a river with friends.  For a fun and affordable trip, this is a great option for a hot summer day.  From a fun jostle down the river to a dangerous struggle to stay afloat, rafting is fun and exciting for everyone.",
-    "category": "Ideal Temp: 75°f +",
+    "activity": "Watch a Movie",
+    "details": "On the couch or in the theatre, pick something out and relax as the flick plays! A great way to pass time and entertain yourself.",
+    "category": "Ideal Temp: Any",
     "id": 3
   },
   {
-    "activity": "Go on a Hike",
-    "details": "Bright, sunny days are perfect to go for a hike. Pack a lunch, plenty of water, grab a friend and your dog. Bring some sunscreen and a snack for your four legged friend, too!",
-    "category": "Ideal Temp: 50°f - 55°f",
+    "activity": "Grill Out",
+    "details": "Enjoy the weather by lighting up the grill and spending time outside maning it! Feel free to grill as much or as little as you'd like, the flavor is incredible so it might be worth grilling enough for the whole week. Dont forget about fire safety!",
+    "category": "Ideal Temp: 66°f - 72°f",
     "id": 4
   },
   {
-    "activity": "Go to the Lake",
-    "details": "What better to do to beat the heat than go to the lake? Nothing, thats what!  Grab a group of friends and take a drive to the lake and enjoy the simple pleasures of life or get yourself a boat and speed things up! Soak up the sun and create some lasting memories while you’re at it.",
+    "activity": "Walk your Dog",
+    "details": "Take your companion out for a walk! Enjoy the day with your four legged friend by taking a walk in your neighborhood or in the local park. Bring some water for you and your companion and maybe even a snack!",
     "category": "Ideal Temp: 75°f +",
     "id": 5
   }

@@ -30,12 +30,33 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card {
+  animation-name: card;
+  animation-timing-function: linear;
+  animation-duration: 400ms;
+  margin-top: 25px;
+}
+
+@keyframes card {
+  0% {
+    opacity: 0;
+    margin-top: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 5px;
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 15px;
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 20px;
   }
 }
 

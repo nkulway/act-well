@@ -1,13 +1,13 @@
 const warmActivities = [
   {
-    "activity": "Go for a Run",
-    "details": "Challenge yourself and go for a run!  Did you know running not only burns 50% more calories than walking but it helps build stronger bones & promotes better mood and energy?  Any distance at any speed - you can do it!",
-    "category": "Ideal Temp: 50°f - 59°f",
+    "activity": "Hot Yoga",
+    "details": "Get ready to sweat! Hit up the studio and get your stretch on in this intense yoga practice. Make sure to hydrate well before during and after!",
+    "category": "Ideal Temp: 60°f - 69°f",
     "id": 1
   },
   {
-    "activity": "Have a Picnic",
-    "details": "A nice picnic on a nice warm day.  What could be better than enjoying a light meal in a park or open field while the sun shines.  Lay back, enjoy the clouds as they pass by.",
+    "activity": "Run a Marathon",
+    "details": "Set your mind to it, and finish! Training is key when it comes to running a marathon, you will need to be disciplined in order to complete and not injur yourself. A terrific achievement that you'll remember for the rest of your life.",
     "category": "Ideal Temp: 65°f - 72°f",
     "id": 2 
   },
@@ -19,13 +19,13 @@ const warmActivities = [
   },
   {
     "activity": "Go on a Hike",
-    "details": "Bright, sunny days are perfect to go for a hike. Pack a lunch, plenty of water, grab a friend and your dog. Bring some sunscreen and a snack for your four legged friend, too!",
+    "details": "Challenge yourself! Bright, sunny days are perfect to go for a hike. Pack a lunch, plenty of water, and even your dog. Bring some sunscreen and a snack for your four legged friend, too!",
     "category": "Ideal Temp: 50°f - 55°f",
     "id": 4
   },
   {
-    "activity": "Go to the Lake",
-    "details": "What better to do to beat the heat than go to the lake? Nothing, thats what!  Grab a group of friends and take a drive to the lake and enjoy the simple pleasures of life or get yourself a boat and speed things up! Soak up the sun and create some lasting memories while you’re at it.",
+    "activity": "Heavy Weight Lifting",
+    "details": "Get your notebook and your blender bottle and start hitting the gym! There are numorous benefits to weight training and gyms are easily accessible now-a-days so what are you waiting for!",
     "category": "Ideal Temp: 75°f +",
     "id": 5
   }

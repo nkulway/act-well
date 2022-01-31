@@ -11,7 +11,6 @@ import { Route, Routes } from 'react-router';
 import Relaxation from './pages/Relaxation';
 import Activity from './pages/activityCard'
 import Footer from './pages/Footer';
-import Main from './pages/Main';
 import { checkUser } from './redux/actions/actions'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
@@ -40,7 +39,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/relaxation" element={<Relaxation />} />
       </Routes>
-      {/* <Main /> */}
     </div>
       <Footer />
       </>

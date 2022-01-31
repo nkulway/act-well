@@ -1,6 +1,6 @@
 const coldActivities = [
   {
-    "activity": "Go Ice Skating//Amusement",
+    "activity": "Go Ice Skating",
     "details": "What better to do to enjoy the crisp air than to go ice skating! Enjoy a good time with friends or maybe a fun date night with someone special. ",
     "category": "Ideal Temp: 17°f - 23°f",
     "id": 1
@@ -24,8 +24,8 @@ const coldActivities = [
     "id": 4
   },
   {
-    "activity": "Go for a Winter Hike",
-    "details": "What a wonderful time of year to enjoy the sheer beauty of nature during the winter season.  Take a camera and pack some coco or cider in your thermous!  Grab a friend or two and don't forget your four leggeed companion!",
+    "activity": "Game Night!",
+    "details": "All those games you have in your closet are just dying to to be played! Open the windows and get a group of people together for a fun night playing your favorite games!",
     "category": "Ideal Temp: 20°f - 30°f",
     "id": 5
   }
