@@ -39,7 +39,7 @@ function NavBar() {
 
   const handleLogout = () => {
     dispatch(logOutUser())
-    navigate("/login");
+    navigate("/");
   };
 
   return (

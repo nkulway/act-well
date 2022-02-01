@@ -1,12 +1,21 @@
 import axios from "axios";
-import { Button, Card, CardContent, CardHeader, Container, Grid, IconButton, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardContent,
+  CardHeader,
+  Container,
+  Grid,
+  IconButton,
+  TextField,
+  Typography,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./activities.css";
 
 function Activities() {
-  
   const [name, setName] = useState("");
   const [temperature, setTemperature] = useState("");
   const [average, setAverage] = useState("");
@@ -53,31 +62,24 @@ function Activities() {
       });
   };
 
-
-
-
   const handleDelete = (e) => {
-    let id = e.id
+    let id = e.id;
     axios
-      .delete(
-        `api/v1/activities/`+id,
-        {
-          headers: {
-            "x-access-token": token,
-          },
-        }
-      )
+      .delete(`api/v1/activities/` + id, {
+        headers: {
+          "x-access-token": token,
+        },
+      })
       .then((res) => {
         console.log(res.data);
-        alert("You successfully deleted an activity!")
+        alert("You successfully deleted an activity!");
       })
       .catch((err) => {
         console.log(err.response);
         alert(err.response.data.error);
       });
-      window.location.reload(false)
+    window.location.reload(false);
   };
-
 
   return (
     <div className="activity-container">

@@ -15,7 +15,8 @@ const Register = () => {
       .then(res => {
         console.log(res.data)
         alert('Registered successfully')
-        navigate('/login')
+        navigate('/')
+        window.location.reload(false)
       })
       .catch(err => {
         console.log(err.response)
@@ -24,7 +25,7 @@ const Register = () => {
   }
 
   return (
-  <div>
+  <div className="login-form">
     <h1>Register</h1>
     <form className="form" onSubmit={(e) => handleSubmit(e)}>
 

@@ -3,9 +3,17 @@ import Header from '../../header-final.svg'
 import { Link, Typography } from '@mui/material';
 import './home.css'
 import Login from '../login/Login';
+import { useState } from 'react';
+import Register from '../register/Register';
 
 const Home = () => {
 
+  const [stage, setStage] = useState(0)
+
+  const handleClick = (stg) => {
+    setStage(stg)
+  }
+  
   
 
   
@@ -19,11 +27,16 @@ const Home = () => {
         <Typography fontWeight="500" variant="h3">Act with ease</Typography>
         <div className="paragraph-txt">
           <Typography fontWeight="400" variant="p">ActWell is your source for discovering and organizing healthy activities curated just for you, by cutting out the time it takes for you to figure out what you truly want to do.</Typography><br/>
-          <Link href="/register" underline="hover">
+          <Link onClick={() => handleClick(1)} href="#" underline="hover">
               {'Register now!'}
           </Link>
         </div>
-        <Login />
+        {stage === 0 && 
+          <Login />
+        } 
+        {stage === 1 && 
+          <Register />
+        }  
       </div>
       <div className="computer-img">
         <img src={Computer} alt="computer-img" />
