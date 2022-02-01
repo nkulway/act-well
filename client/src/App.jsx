@@ -1,7 +1,10 @@
+import Activity from './pages/activities/activityCard'
 import Activities from './pages/activities/Activities';
 import Amusement from './pages/amusement/Amusement';
 import './App.css';
+import { checkUser } from './redux/actions/actions'
 import Exercise from './pages/exercise/Exercise';
+import Footer from './pages/footer/Footer';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import NavBar from './components/nabBar/NavBar';
@@ -9,9 +12,6 @@ import Quiz from './pages/quiz/Quiz';
 import Register from './pages/register/Register';
 import { Route, Routes } from 'react-router';
 import Relaxation from './pages/relaxation/Relaxation';
-import Activity from './pages/activities/activityCard'
-import Footer from './pages/footer/Footer';
-import { checkUser } from './redux/actions/actions'
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 

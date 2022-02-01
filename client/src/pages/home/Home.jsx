@@ -1,10 +1,13 @@
-import { Typography } from '@mui/material';
 import Computer from '../../computer.svg'
-import Header from '../../header.svg'
+import Header from '../../header-final.svg'
 import Register from "../register/Register"
+import { Link, Typography } from '@mui/material';
 import './home.css'
+import Login from '../login/Login';
 
 const Home = () => {
+
+  
 
   
   return (
@@ -17,8 +20,11 @@ const Home = () => {
         <Typography fontWeight="500" variant="h3">Act with ease</Typography>
         <div className="paragraph-txt">
           <Typography fontWeight="400" variant="p">ActWell is your source for discovering and organizing healthy activities curated just for you, by cutting out the time it takes for you to figure out what you truly want to do.</Typography><br/>
+          <Link href="/register" underline="hover">
+              {'Register now!'}
+          </Link>
         </div>
-        <Register />
+        <Login />
       </div>
       <div className="computer-img">
         <img src={Computer} alt="computer-img" />

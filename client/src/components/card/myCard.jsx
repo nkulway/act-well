@@ -1,21 +1,14 @@
-import React from "react";
+import axios from "axios";
 import { Card, IconButton, Typography } from "@mui/material";
 import { CardHeader } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { Checkbox } from "@mui/material";
-import axios from "axios";
+import React from "react";
 
 function Warm({ activity }) {
-	// const [name, setName] = useState('')
-	// const [temperature, setTemperature] = useState('')
-	// const [average, setAverage] = useState('')
 	const token = localStorage.getItem('token')
 
 const handleClick = (e) => {
-	// e.preventDefault()
-	// setName(e.activity)
-	// setTemperature(e.category)
-	// setAverage(e.details)
 	axios.post('/api/v1/activities', { name: e.activity, temperature: e.category, average: e.details }, {
 		headers: {
 			'x-access-token': token
@@ -30,10 +23,6 @@ const handleClick = (e) => {
 			alert(err.response.data.error)
 		})
 }
-
-// console.log(name)
-// console.log(temperature)
-// console.log(average)
 
 		return(
      <div>

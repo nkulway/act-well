@@ -9,12 +9,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,6 +22,16 @@
 
 .App-link {
   color: #61dafb;
+}
+
+body, 
+html{
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .card {
@@ -66,17 +70,6 @@ main {
 
 .push {
   margin-top: 200px;
-}
-
-html,
-body {
-  height: 100%;
-  /* border: crimson solid 1px; */
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }
 
 #root {

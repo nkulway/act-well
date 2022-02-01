@@ -1,11 +1,8 @@
-import React from 'react'
-// import Blue from '../../Blue_Gradient.svg'
 import CardCold from '../../components/amusement/cold/cold';
 import CardWarm from '../../components/amusement/warm/cardWarm';
 import { connect } from 'react-redux'
-// import Searching from '../../components/SearchBar'
-// import './style.css';
-// import { CardContent } from '@mui/material';
+import React from 'react'
+
 
 function Amusement({ results }) {
 
@@ -24,7 +21,7 @@ function Amusement({ results }) {
        <div className="activity-container">
         <div>
           {/* <Searching /> */}
-          <h1>{results}°f</h1>
+          <h1>It is currently {results}°f outside</h1>
         {handleTemp()} 
         </div>
       </div>

@@ -1,11 +1,11 @@
 import { AppBar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography } from "@mui/material";
-import React from "react";
+import { AccountCircle } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { logOutUser } from "../../redux/actions/actions";
 import { useNavigate } from "react-router";
 import { useState } from "react";
-import { AccountCircle } from "@material-ui/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { logOutUser } from "../../redux/actions/actions";
+import React from "react";
 import './navBar.css'
 
 
@@ -78,9 +78,6 @@ function NavBar() {
             </MenuItem>
             <MenuItem onClick={handleClose} component={Link} to="/register">
               Register
-            </MenuItem>
-            <MenuItem onClick={handleClose} component={Link} to="/activity">
-              Activity
             </MenuItem>
             
           </Menu>

@@ -33,6 +33,7 @@ function SearchBar({ executeSearch, reset }) {
     <FormControl fullWidth sx={{ m: 1 }}>
         <InputLabel htmlFor="outlined-adornment-location">Location</InputLabel>
         <OutlinedInput
+          autoComplete="off"
           id="outlined-adornment-location"
           value={values.location}
           onChange={handleChange("location")}

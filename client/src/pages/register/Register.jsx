@@ -29,6 +29,7 @@ const Register = () => {
     <form className="form" onSubmit={(e) => handleSubmit(e)}>
 
         <TextField type="text" id="user_name" 
+        autoComplete="off"
         onChange={(e) => setUsername(e.target.value)} 
         value={user_name}
         required
@@ -36,13 +37,15 @@ const Register = () => {
         /><br/>
 
         <TextField type="email" id="email" 
+        autoComplete="off"
         onChange={(e) => setEmail(e.target.value)} 
         value={email}
         required
         label="Email"
         /><br/>
     
-        <TextField type="text" id="password" 
+        <TextField type="password" id="password" 
+        autoComplete="off"
         onChange={(e) => setPassword(e.target.value)} 
         value={password}
         required

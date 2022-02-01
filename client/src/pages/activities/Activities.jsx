@@ -1,19 +1,9 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Grid,
-  IconButton,
-  TextField,
-  Typography,
-} from "@mui/material";
 import axios from "axios";
+import { Button, Card, CardContent, CardHeader, Container, Grid, IconButton, TextField, Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./activities.css";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 function Activities() {
   
@@ -64,31 +54,7 @@ function Activities() {
   };
 
 
-  // function handleClick(e) {
-  //   let target = e.target;
-  //   let id = e.id
-  
-  //   if (target.tagName === 'BUTTON'){
-  //     const parent = target.parentElement
-  //     const body = {
-  //       id: e.id,
-  //       average: e.value
-  //     }
-  //     console.log(id)
-  //     axios.put(`/api/v1/activities/`, body, {
-  //       headers: {
-  //         "x-access-token": token,
-  //       }})
-  //         .then(res => console.log(res.message))
-  //         .catch(err => console.log(err));
-  //   } else {
-  //     target.innerHTML = `
-  //     <input id="edit-member" value="${target.innerText}" />
-  //     <button data-id="${id}">Update</button> 
-  //   `;
-  //   }}
 
-  
 
   const handleDelete = (e) => {
     let id = e.id
@@ -124,7 +90,6 @@ function Activities() {
         <Grid container spacing={3}>
           {activities.map((activity) => (
             <Grid item key={activity.id} xs={12} md={6} lg={4}>
-              {/* <Paper>{activity.activity}</Paper> */}
               <Card className="card" elevation={2}>
                 <CardHeader
                   action={

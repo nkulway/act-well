@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { Button } from '@mui/material';
-import { TextField } from '@material-ui/core';
+import { logInUser } from '../../redux/actions/actions';
 import React, { useState } from 'react';
+import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import './login.css'
-import { logInUser } from '../../redux/actions/actions';
 
 
 const Login = () => {
@@ -30,7 +30,7 @@ const Login = () => {
   }
 
   return (
-  <div>
+  <div className="login-form">
     <h1>Login</h1>
     <div>
       <form className="form" onSubmit={(e) => handleSubmit(e)}>

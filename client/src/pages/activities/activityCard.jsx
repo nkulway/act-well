@@ -20,7 +20,7 @@ function Activity({ results }) {
        <div className="activity-container">
         <div>
           {/* <Searching /> */}
-          <h1>{results}°f</h1>
+          <h1>It is currently {results}°f outside</h1>
         {handleTemp()} 
         </div>
       </div>
