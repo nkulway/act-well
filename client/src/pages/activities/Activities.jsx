@@ -120,6 +120,7 @@ function Activities() {
         </Typography>
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <TextField
+            autoComplete="off"
             type="text"
             id="name"
             onChange={(e) => setName(e.target.value)}
@@ -130,6 +131,7 @@ function Activities() {
           <br />
 
           <TextField
+            autoComplete="off"
             type="text"
             id="temperature"
             onChange={(e) => setTemperature(e.target.value)}
@@ -140,6 +142,7 @@ function Activities() {
           <br />
 
           <TextField
+            autoComplete="off"
             type="text"
             id="average"
             onChange={(e) => setAverage(e.target.value)}
