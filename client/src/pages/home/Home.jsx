@@ -1,6 +1,5 @@
 import Computer from '../../computer.svg'
 import Header from '../../header-final.svg'
-import Register from "../register/Register"
 import { Link, Typography } from '@mui/material';
 import './home.css'
 import Login from '../login/Login';
