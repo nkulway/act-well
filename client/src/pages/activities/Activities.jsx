@@ -16,6 +16,11 @@ import { useNavigate } from "react-router-dom";
 import "./activities.css";
 
 function Activities() {
+
+
+  const [newActivity, setNewActivity] = useState(null)
+  const [updateForm, setUpdateForm] = useState([])
+
   const [name, setName] = useState("");
   const [temperature, setTemperature] = useState("");
   const [average, setAverage] = useState("");
@@ -62,6 +67,36 @@ function Activities() {
       });
   };
 
+
+
+
+
+
+  const handleUpdate = (e) => {
+   e.preventDefault()
+      const body = {
+        id: newActivity.id,
+        name: newActivity.name,
+        temperature: newActivity.temperature,
+        average: newActivity.average
+      }
+      axios.put(`/api/v1/activities/${newActivity.id}`, body, {
+        headers: {
+          "x-access-token": token,
+        }})
+          .then(res => console.log(res.message))
+          .catch(err => console.log(err));
+    }
+
+    const handleClick = (clickedActivity) => {
+      setNewActivity(clickedActivity)
+    }
+
+
+
+
+
+
   const handleDelete = (e) => {
     let id = e.id;
     axios
@@ -88,11 +123,51 @@ function Activities() {
           Your Activities
         </Typography>
       </div>
-      <Container>
+      { newActivity && (
+       
+          <form className="form" onSubmit={(e) => handleUpdate(e)}>
+          <TextField
+            type="text"
+            id="name"
+            onChange={(e) => setNewActivity({...newActivity, name: e.target.value})}
+            value={newActivity.name}
+            required
+            label='Name'
+          />
+          <br />
+
+          <TextField
+            type="text"
+            id="temperature"
+            onChange={(e) => setNewActivity({...newActivity, temperature: e.target.value})}
+            value={newActivity.temperature}
+            required
+            label='Temperature'
+          />
+          <br />
+
+          <TextField
+            type="text"
+            id="average"
+            onChange={(e) => setNewActivity({...newActivity, average: e.target.value})}
+            value={newActivity.average}
+            required
+            label="Description"
+          />
+          <br />
+
+          <Button type="submit" variant="contained">
+            Update Activity
+          </Button>
+        </form>
+      
+      )}
+
+      <Container >
         <Grid container spacing={3}>
           {activities.map((activity) => (
             <Grid item key={activity.id} xs={12} md={6} lg={4}>
-              <Card className="card" elevation={2}>
+              <Card onClick={() => handleClick(activity)} className="card" elevation={2}>
                 <CardHeader
                   action={
                     <IconButton
@@ -116,7 +191,7 @@ function Activities() {
           ))}
         </Grid>
       </Container>
-      <div className="activity-form">
+      <div className="activity-form" >
         <Typography fontWeight="500" variant="h3">
           Add an activity of your own.
         </Typography>
