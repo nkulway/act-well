@@ -19,7 +19,6 @@ function Activities() {
 
 
   const [newActivity, setNewActivity] = useState(null)
-  const [updateForm, setUpdateForm] = useState([])
 
   const [name, setName] = useState("");
   const [temperature, setTemperature] = useState("");
@@ -28,6 +27,8 @@ function Activities() {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
+
+  //  when the page loads, if the user is logged in grab their activitt information based on their JWT token
   useEffect(() => {
     axios
       .get("/api/v1/activities", {
@@ -43,6 +44,8 @@ function Activities() {
   if (!token) {
     navigate("/login");
   }
+
+//  Create a new activity related specifically to the user who is logged in, in the browser
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,9 +71,7 @@ function Activities() {
   };
 
 
-
-
-
+// PUT request to update user's activities as they please
 
   const handleUpdate = (e) => {
    e.preventDefault()
@@ -93,9 +94,7 @@ function Activities() {
     }
 
 
-
-
-
+// DELETE request for the user to delete activities as they please
 
   const handleDelete = (e) => {
     let id = e.id;
@@ -116,6 +115,8 @@ function Activities() {
     window.location.reload(false);
   };
 
+
+
   return (
     <div className="activity-container">
       <div className="heading">
@@ -123,6 +124,7 @@ function Activities() {
           Your Activities
         </Typography>
       </div>
+      {/* if there is a 'newActivity' */}
       { newActivity && (
        
           <form className="form" onSubmit={(e) => handleUpdate(e)}>
