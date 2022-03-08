@@ -7,7 +7,7 @@ import Exercise from './pages/exercise/Exercise';
 import Footer from './pages/footer/Footer';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import NavBar from './components/nabBar/NavBar';
+import NavBar from './components/navBar/NavBar';
 import Quiz from './pages/quiz/Quiz';
 import Register from './pages/register/Register';
 import { Route, Routes } from 'react-router';
@@ -19,11 +19,12 @@ function App() {
 
   const dispatch = useDispatch()
 
+  // check user globally 
   useEffect(() => {
     dispatch(checkUser())
   }, [dispatch])
 
-  
+  // initiating routes for application
   return (
     <>
     <div className="App">
@@ -41,6 +42,7 @@ function App() {
       </Routes>
     </div>
     <div className="push">
+      {/* styling decision made to create sticky footer */}
       <Footer />
       </div>
       </>

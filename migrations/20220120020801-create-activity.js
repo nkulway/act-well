@@ -17,6 +17,7 @@ module.exports = {
       average: {
         type: Sequelize.INTEGER
       },
+      // foreign key relating activities to users
       UserId: {
         type: Sequelize.INTEGER,
         references: {

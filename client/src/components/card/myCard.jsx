@@ -8,6 +8,8 @@ import React from "react";
 function Warm({ activity }) {
 	const token = localStorage.getItem('token')
 
+	// add activity to user profile by checking box on card
+	// utilizing axios for HTTP requests
 const handleClick = (e) => {
 	axios.post('/api/v1/activities', { name: e.activity, temperature: e.category, average: e.details }, {
 		headers: {
@@ -24,6 +26,9 @@ const handleClick = (e) => {
 		})
 }
 
+
+
+// card template to be displayed after quiz
 		return(
      <div>
 			 <Card className="card" elevation={2}>

@@ -9,8 +9,11 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
+
+  // register as a user 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // utilize axios to send HTTP request 
     axios.post('/api/v1/users/register', { user_name, email, password })
       .then(res => {
         console.log(res.data)

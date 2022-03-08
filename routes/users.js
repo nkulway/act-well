@@ -22,7 +22,7 @@ router.post('/register', function(req, res, next) {
           return
         }
         //if not then create new user
-        //has password
+        //hash password
         bcrypt.hash(req.body.password, 10)
           .then(hash => {
             //store in db
@@ -57,7 +57,7 @@ router.post('/login', (req, res) => {
         return
       }
 
-      // check password against has in db
+      // check/compare password against hash in db
       bcrypt.compare(req.body.password, user.password)
         .then(match => {
 

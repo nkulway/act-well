@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // relate user table to activity table - the activity table belongs to the user
       User.hasMany(models.Activity)
     }
   }

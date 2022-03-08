@@ -1,5 +1,5 @@
-import Computer from '../../computer.svg'
-import Header from '../../header-final.svg'
+import Computer from '../../images/computer.svg'
+import Header from '../../images/header-final.svg'
 import { Link, Typography } from '@mui/material';
 import './home.css'
 import Login from '../login/Login';
@@ -10,13 +10,13 @@ const Home = () => {
 
   const [stage, setStage] = useState(0)
 
+
+  // stage the login to changed component based on click
   const handleClick = (stg) => {
     setStage(stg)
   }
   
-  
 
-  
   return (
     <>
     <div className="header-svg">
@@ -27,10 +27,12 @@ const Home = () => {
         <Typography fontWeight="500" variant="h3">Act with ease</Typography>
         <div className="paragraph-txt">
           <Typography fontWeight="400" variant="p">ActWell is your source for discovering and organizing healthy activities curated just for you, by cutting out the time it takes for you to figure out what you truly want to do.</Typography><br/>
+          {/* when the user clicks 'register now' the state is changed to one */}
           <Link onClick={() => handleClick(1)} href="#" underline="hover">
               {'Register now!'}
           </Link>
         </div>
+        {/* conditional rendering of login/register form */}
         {stage === 0 && 
           <Login />
         } 

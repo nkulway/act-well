@@ -13,7 +13,11 @@ function NavBar() {
 
 
   const dispatch = useDispatch()
+  // redux hook useSelector, sharing weather or not a user is logged in
+  // takes selector function as argument
   const {user, isChecked} = useSelector(state => state.user)
+
+  // state for opening and closing dropdown menus 
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchor, setAnchor] = useState(null);
   const open = Boolean(anchorEl);
@@ -35,12 +39,15 @@ function NavBar() {
     setAnchor(null);
   };
 
+  // determining if the user is logged in 
   const isLoggedIn = isChecked && user ? true : false;
 
   const handleLogout = () => {
+    // tells redux to remove token from local storage
     dispatch(logOutUser())
     navigate("/");
   };
+
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -48,6 +55,7 @@ function NavBar() {
         <Toolbar>
           <IconButton
             id="demo-positioned-button"
+            // if true look to menu-dropdown 
             aria-controls={open ? "menu-dropdown" : undefined}
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
@@ -86,7 +94,9 @@ function NavBar() {
             component="div"
             sx={{ flexGrow: 1 }}
           ></Typography>
+          {/* is a user logged in? */}
           { isLoggedIn ? (
+            // if true
             <div>
               <IconButton
                 size="large"
@@ -113,6 +123,7 @@ function NavBar() {
                 open={Boolean(anchor)}
                 onClose={handleProfileClose}
               >
+                {/* display user name in dropdown */}
                 <MenuItem>{user.user_name}</MenuItem>
                 <MenuItem onClick={handleProfileClose} component={Link} to="/activities">
                   My Activities
@@ -121,6 +132,7 @@ function NavBar() {
               </Menu>
             </div>
           ) : (
+            // if false
             <Button color="inherit" href="/login">
               Login
             </Button>

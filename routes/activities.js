@@ -12,9 +12,9 @@ router.get('/', checkAuth, function(req, res, next) {
     })
 });
 
-// DELETE api/v1/activities/6
+// DELETE api/v1/activities/6 --- deleting activities 
 router.delete('/:id', checkAuth, (req, res) => {
-  // try and remove activity with id, as long it is owned by th logged in user
+  // try and remove activity with id, as long it is owned by the logged in user
   models.Activity.destroy({ where: { 
     id: req.params.id,
     UserId: req.user.id 
@@ -56,8 +56,9 @@ router.post('/', checkAuth, (req, res) => {
   // respond to client with new activity
 })
 
+// using put to update activities in db
 router.put('/:id', checkAuth, (req, res) => {
-  // try and remove activity with id, as long it is owned by th logged in user
+  // try and remove activity with id, as long it is owned by the logged in user
   models.Activity.update({
     name: req.body.name,
     temperature: req.body.temperature,

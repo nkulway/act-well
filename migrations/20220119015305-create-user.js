@@ -1,7 +1,9 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
+    // initiate promise to create users table in db
     await queryInterface.createTable('Users', {
+      // add six columns to table 
       id: {
         allowNull: false,
         autoIncrement: true,

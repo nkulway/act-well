@@ -8,6 +8,7 @@ const initialState = {
 function userReducer(state = initialState, action) {
   switch (action.type) {
     case USER_LOGGED_IN: {
+      // when user logs in point to user from db
       return {
         isChecked: true,
         user: action.user

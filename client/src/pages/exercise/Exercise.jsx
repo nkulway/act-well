@@ -6,7 +6,7 @@ import React from 'react'
 
 function Exercise({ results }) {
 
-
+// pull form the exercise component and determine the cards displayed based on temperature
   const handleTemp = () => {
     if(results > 50){
       return <CardWarm />

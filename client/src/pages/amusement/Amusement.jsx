@@ -6,7 +6,7 @@ import React from 'react'
 
 function Amusement({ results }) {
 
-
+// pull from amusement component and determine the cards displayed
   const handleTemp = () => {
     if(results > 50){
       return <CardWarm />
@@ -20,7 +20,6 @@ function Amusement({ results }) {
      <div className="activity">
        <div className="activity-container">
         <div>
-          {/* <Searching /> */}
           <h1>It is currently {results}°f outside</h1>
         {handleTemp()} 
         </div>
@@ -29,7 +28,7 @@ function Amusement({ results }) {
   );
 }
 
-// how to handle undefined 'results'in reducer
+// how to handle undefined 'results' in reducer
 const mapStateToProps = state => ({
   results: state.search.results,
   reset: state.reset

@@ -16,6 +16,7 @@ function SearchBar({ executeSearch, reset }) {
     reset
   });
 
+  // when the location is entered replace the state of values with in search value
   const handleChange = (prop) => (e) => {
     setValues({ ...values, [prop]: e.target.value })
     console.log(values)
@@ -30,6 +31,7 @@ function SearchBar({ executeSearch, reset }) {
     <div className="search">
       <div className="search-container">
         <form onSubmit={handleSubmit}>
+    {/* to use an input field for the search we must first wrap it in the FormControl component */}
     <FormControl fullWidth sx={{ m: 1 }}>
         <InputLabel htmlFor="outlined-adornment-location">Location</InputLabel>
         <OutlinedInput

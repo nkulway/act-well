@@ -19,12 +19,12 @@ function Activities() {
 
 
   const [newActivity, setNewActivity] = useState(null)
-
   const [name, setName] = useState("");
   const [temperature, setTemperature] = useState("");
   const [average, setAverage] = useState("");
   const [activities, setActivities] = useState([]);
   const token = localStorage.getItem("token");
+  // navigate routes in an event handler or specific change of state
   const navigate = useNavigate();
 
 
@@ -39,11 +39,16 @@ function Activities() {
       .then((res) => {
         setActivities(res.data);
       });
+      // update when token changes
   }, [token]);
 
+
+  // if no token, user logs out, redirect to login page
   if (!token) {
     navigate("/login");
   }
+
+
 
 //  Create a new activity related specifically to the user who is logged in, in the browser
 
@@ -75,12 +80,14 @@ function Activities() {
 
   const handleUpdate = (e) => {
    e.preventDefault()
+   //  send body to server
       const body = {
         id: newActivity.id,
         name: newActivity.name,
         temperature: newActivity.temperature,
         average: newActivity.average
       }
+      // use axios to make HTTP request from backend
       axios.put(`/api/v1/activities/${newActivity.id}`, body, {
         headers: {
           "x-access-token": token,
@@ -89,6 +96,7 @@ function Activities() {
           .catch(err => console.log(err));
     }
 
+  // capture activity in local state
     const handleClick = (clickedActivity) => {
       setNewActivity(clickedActivity)
     }
@@ -124,9 +132,10 @@ function Activities() {
           Your Activities
         </Typography>
       </div>
-      {/* if there is a 'newActivity' */}
+
+      {/* if 'newActivity' isnt null */}
       { newActivity && (
-       
+      //  text field component acts as input field
           <form className="form" onSubmit={(e) => handleUpdate(e)}>
           <TextField
             type="text"
@@ -165,10 +174,13 @@ function Activities() {
       
       )}
 
+        {/* put content in container so the component will have the flex container behaivor */}
       <Container >
+        {/* keep everything in a responsive grid */}
         <Grid container spacing={3}>
           {activities.map((activity) => (
             <Grid item key={activity.id} xs={12} md={6} lg={4}>
+              {/* wrap card content in card component */}
               <Card onClick={() => handleClick(activity)} className="card" elevation={2}>
                 <CardHeader
                   action={
@@ -193,6 +205,8 @@ function Activities() {
           ))}
         </Grid>
       </Container>
+
+      {/* form to add a new activity */}
       <div className="activity-form" >
         <Typography fontWeight="500" variant="h3">
           Add an activity of your own.

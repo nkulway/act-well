@@ -15,8 +15,10 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
+  // handle HTTP request from backend with axios 
   const handleSubmit = (e) => {
     e.preventDefault()
+    // send correct user information to backend 
     axios.post('/api/v1/users/login', { user_name, email, password })
       .then(res => {
         console.log(res.data)

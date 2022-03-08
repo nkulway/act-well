@@ -10,18 +10,29 @@ function Quiz() {
   const [questionAvg, setQuestionAvg] = useState([])
   const navigate = useNavigate()
   
+
+   
   const handleClick = (num, stg) => {
+  // stage questions to render on screen sequentially
     setStage(stg)
+  // create new state with averaged number
     setQuestionAvg([...questionAvg, parseInt(num)])
 }
 
+
+  // handle the answers of quiz to find average of answers
+  // attempt to give user curated selection of activity cards
   const findAvg = (arrNum) => {
+    // if all three questions havent been answered
+    // keep adding to the entries to state
     if (arrNum.length <= 2){
       const sum = arrNum.reduce((a, b) => a + b, 0);
       const avg = (sum / arrNum.length) || 0;
       console.log(`The sum is: ${sum}. The average is: ${avg}.`);
     return avg
     } else {
+      // once all three questions have been answered
+      // pass the average as an argument in sequencePrompt
       const sum = arrNum.reduce((a, b) => a + b, 0);
       const avg = (sum / arrNum.length) || 0;
       console.log(`The sum is: ${sum}. The average is: ${avg}.`);
@@ -29,6 +40,7 @@ function Quiz() {
   }}
 
   
+  // conditional rendering for curated list
 const sequencePrompt = (avg) => {
   if (avg >= 1.6 && avg <= 2.4){
     navigate('/amusement')
@@ -59,6 +71,7 @@ console.log(average)
       <div className="button-box">
     <br/><Typography fontWeight="500" variant="p">1. You wake up and it's a beautiful Saturday morning. What do you do first?</Typography><br/>
         <div className="button-container">
+          {/* each button triggers a change in state */}
             <Button className="button" variant="contained" onClick={() => handleClick(1, 1)}>Look at your phone and go back to sleep</Button><br/>
             <Button className="button" variant="contained" onClick={() => handleClick(2, 1)}>Message a couple of your friends to hangout</Button ><br/>  
             <Button className="button" variant="contained" onClick={() => handleClick(3, 1)}>immediately get out of bed and do 10 push ups</Button ><br/>

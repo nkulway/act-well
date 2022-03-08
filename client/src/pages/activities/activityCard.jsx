@@ -30,7 +30,6 @@ function Activity({ results }) {
 
 const mapStateToProps = state => ({
   results: state.search.results
-  // humidity: state.search.results.humidity
 })
 
 export default connect(mapStateToProps, null)(Activity);

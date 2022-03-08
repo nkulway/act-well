@@ -14,7 +14,7 @@ function CardWarm() {
 				<Grid container spacing={3}>
 					{warmActivities.map(activity => (
 						<Grid item key={activity.id} xs={12} md={6} lg={4}>
-							{/* <Paper>{activity.activity}</Paper> */}
+							{/* use card component dynamically inside of container */}
 							<MyCard activity={activity} />
 						</Grid>
 					))}

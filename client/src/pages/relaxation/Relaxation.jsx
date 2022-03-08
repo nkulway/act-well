@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 function Relaxation({ results }) {
 
-
+// pull form the relaxation component and determine the cards displayed based on temperature
   const handleTemp = () => {
     if(results > 50){
       return <CardWarm />
